@@ -664,7 +664,10 @@ h3 {
     opacity: 1 !important;
   }
 
-  .stat.corner-tl { order: 1; }
+  .stat.corner-tl {
+    order: 1;
+    margin-top: 36px;
+  }
   .stat.corner-tr { order: 2; }
   .stat.corner-bl { order: 3; }
   .stat.corner-br { order: 4; }
