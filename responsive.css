@@ -621,7 +621,7 @@ h3 {
     display: flex !important;
     flex-direction: column;
     align-items: center;
-    gap: 60px;
+    gap: 44px;
     padding: 370px 20px 80px !important;
     margin: 0 !important;
     min-height: auto !important;
@@ -666,7 +666,7 @@ h3 {
 
   .stat.corner-tl {
     order: 1;
-    margin-top: 36px;
+    margin-top: 56px;
   }
   .stat.corner-tr { order: 2; }
   .stat.corner-bl { order: 3; }
