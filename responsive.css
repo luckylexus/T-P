@@ -906,3 +906,20 @@ h3 {
     font-size: 12px;
   }
 }
+
+
+/* Founder portraits: grayscale by default, color on hover or mobile tap. */
+.founder-photo img {
+  filter: grayscale(1);
+  transition: filter 0.45s ease;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .founder-photo:hover img {
+    filter: grayscale(0);
+  }
+}
+
+.founder-photo.is-color img {
+  filter: grayscale(0);
+}
