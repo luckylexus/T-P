@@ -1189,3 +1189,28 @@ h3 {
     transition: none;
   }
 }
+
+
+/* Simpler contact-card hover: no expanding fill, only a subtle lift and tint. */
+.contact-card::before {
+  display: none;
+}
+
+.contact-card {
+  transition:
+    border-color 0.25s ease,
+    background-color 0.25s ease,
+    transform 0.25s ease;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .contact-card:hover {
+    border-color: var(--color-accent-primary);
+    background: var(--color-accent-green-tint);
+    transform: translateY(-2px);
+  }
+}
+
+.contact-card:active {
+  transform: translateY(0);
+}
