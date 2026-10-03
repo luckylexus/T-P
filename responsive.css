@@ -1000,8 +1000,8 @@ h3 {
 }
 
 
-/* Founder section headings use the same typography as competency card H3s. */
-.founder-block h3 {
-  font: var(--text-mono-heading-1);
-  color: var(--color-text-primary);
+/* Founder detail copy matches project case description typography. */
+.founder-block li {
+  font: var(--text-mono-body-sm);
+  text-transform: none;
 }
