@@ -694,5 +694,31 @@
     })();
   </script>
 
+
+  <script>
+    // Mobile CTA: hidden on the hero, shown once the user reaches the next section.
+    (function () {
+      var btn = document.getElementById('hero-cta');
+      var hero = document.querySelector('.hero');
+      if (!btn || !hero) return;
+
+      function updateMobileCta() {
+        var isMobile = window.matchMedia('(max-width: 768px)').matches;
+
+        if (!isMobile) {
+          btn.classList.remove('is-mobile-visible');
+          return;
+        }
+
+        var heroBottom = hero.getBoundingClientRect().bottom;
+        btn.classList.toggle('is-mobile-visible', heroBottom <= 0);
+      }
+
+      window.addEventListener('scroll', updateMobileCta, { passive: true });
+      window.addEventListener('resize', updateMobileCta);
+      updateMobileCta();
+    })();
+  </script>
+
 </body>
 </html>
