@@ -1109,3 +1109,17 @@ h3 {
     margin-top: 0;
   }
 }
+
+
+/* Mobile case metrics: align labels and values to the left. */
+@media (max-width: 768px) {
+  .project-stats > div {
+    justify-content: flex-start;
+    text-align: left;
+  }
+
+  .project-stats .label,
+  .project-stats .value {
+    text-align: left;
+  }
+}
