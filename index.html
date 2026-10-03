@@ -504,8 +504,8 @@
         // frame's visual interpolation. This keeps progress stable.
         var rect = statsEl.getBoundingClientRect();
         var docTop = rect.top + window.scrollY;
-        var startScroll = docTop - window.innerHeight * 0.86;
-        var endScroll = docTop - window.innerHeight * 0.34;
+        var startScroll = docTop - window.innerHeight;
+        var endScroll = docTop - window.innerHeight * 0.38;
         var progress = clamp(
           (window.scrollY - startScroll) / Math.max(1, endScroll - startScroll),
           0,
@@ -519,6 +519,11 @@
         statsEl.style.setProperty('--stats-progress', progress.toFixed(4));
         statsEl.style.setProperty('--stats-side-inset', sideInset.toFixed(2) + 'px');
         statsEl.classList.toggle('is-fullbleed', progress >= 0.999);
+
+        var desktopCta = document.getElementById('hero-cta');
+        if (desktopCta) {
+          desktopCta.classList.toggle('is-desktop-visible', progress > 0.08);
+        }
       }
 
       function requestUpdate() {
@@ -639,54 +644,17 @@
   </button>
 
   <script>
-    // The hero's own "ОБСУДИТЬ ПРОЕКТ" button is always position:fixed;
-    // its distance from the bottom of the viewport is driven directly by
-    // scroll position, so it visually crawls from its spot under the
-    // heading down to the bottom of the screen as you scroll, sticks
-    // there, and crawls back to the exact same spot if you scroll back up.
+    // CTA stays off the hero. Desktop visibility is tied to the stats
+    // expansion; mobile visibility is handled by the mobile CTA script.
     (function () {
       var btn = document.getElementById('hero-cta');
-      var spacer = document.getElementById('hero-cta-spacer');
       var contact = document.getElementById('contact');
-      if (!btn || !spacer) return;
+      if (!btn) return;
 
       btn.addEventListener('click', function () {
         if (!contact) return;
         contact.scrollIntoView({ behavior: 'smooth', block: 'start' });
       });
-
-      var STUCK_BOTTOM = 32;
-      var SPEED = 0.45; // <1 slows the crawl down relative to scroll distance
-      var restDocTop = 0;
-      var startBottom = 0;
-
-      function measure() {
-        spacer.style.height = btn.offsetHeight + 'px';
-        var rect = spacer.getBoundingClientRect();
-        restDocTop = rect.top + window.scrollY;
-        startBottom = window.innerHeight - restDocTop - btn.offsetHeight;
-        update();
-      }
-
-      function update() {
-        var bottom = startBottom - window.scrollY * SPEED;
-        if (bottom < STUCK_BOTTOM) bottom = STUCK_BOTTOM;
-        if (bottom > startBottom) bottom = startBottom;
-        btn.style.bottom = bottom + 'px';
-      }
-
-      var ticking = false;
-      window.addEventListener('scroll', function () {
-        if (ticking) return;
-        ticking = true;
-        requestAnimationFrame(function () {
-          update();
-          ticking = false;
-        });
-      }, { passive: true });
-
-      window.addEventListener('resize', measure);
-      measure();
     })();
   </script>
 
