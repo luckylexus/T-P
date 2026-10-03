@@ -342,7 +342,7 @@ button:focus-visible {
 
 /* Subtle asymmetry, echoing the Figma reference: Пользователи (tr) sits a
    bit higher than Выручка (tl); Скорость (bl) and Проекты (br) stay level. */
-.stat.corner-tl { left: calc(50% - 520px); top: calc(46% - 180px); }
+.stat.corner-tl { left: calc(50% - 520px); top: calc(46% - 220px); }
 .stat.corner-bl { left: calc(50% - 460px); top: calc(46% + 180px); }
 .stat.corner-tr { left: calc(50% + 320px); top: calc(46% - 220px); }
 .stat.corner-br { left: calc(50% + 340px); top: calc(46% + 180px); }
