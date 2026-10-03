@@ -1,0 +1,1492 @@
+/* Responsive overrides for T&P Partners.
+   Loaded after styles.css to preserve the original desktop design. */
+
+html,
+body {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: clip;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  min-width: 0;
+}
+
+img,
+svg,
+video,
+canvas {
+  max-width: 100%;
+}
+
+img {
+  height: auto;
+}
+
+h1,
+h2,
+h3,
+p,
+li,
+span,
+a {
+  overflow-wrap: break-word;
+}
+
+h1,
+h2,
+h3 {
+  text-wrap: balance;
+}
+
+.contact-card .value,
+.footer-contacts a,
+.footer-contacts span {
+  overflow-wrap: anywhere;
+}
+
+@media (max-width: 1200px) {
+  .site-header {
+    padding-left: 32px;
+    padding-right: 32px;
+    gap: 24px;
+  }
+
+  .nav-left ul,
+  .nav-right ul {
+    gap: 20px;
+  }
+
+  .hero-inner {
+    width: min(100%, 1080px);
+    padding-left: 32px;
+    padding-right: 32px;
+  }
+
+  .hero h1,
+  .hero-inner h1 {
+    font-size: clamp(52px, 6.3vw, 84px);
+    line-height: 0.98;
+  }
+
+  .founders,
+  .competencies,
+  .projects,
+  .roadmap,
+  .formats,
+  .cta {
+    padding-left: 32px;
+    padding-right: 32px;
+  }
+
+  .founders {
+    gap: 40px;
+  }
+
+  .competency-grid {
+    gap: 16px;
+  }
+
+  .project-row,
+  .project-nda-grid {
+    gap: 20px;
+  }
+
+  .project-card,
+  .project-nda-body,
+  .format-card {
+    padding-left: clamp(24px, 3vw, 40px);
+    padding-right: clamp(24px, 3vw, 40px);
+  }
+
+  .formats-layout {
+    gap: 40px;
+  }
+
+  .contact-cards,
+  .footer-inner {
+    margin-left: 32px;
+    margin-right: 32px;
+    width: auto;
+  }
+}
+
+@media (max-width: 1024px) {
+  .site-header {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+
+  .nav-left ul,
+  .nav-right ul {
+    gap: 14px;
+  }
+
+  .nav-left a,
+  .nav-right a {
+    font-size: 12px;
+  }
+
+  .hero-inner {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+
+  .hero h1,
+  .hero-inner h1 {
+    font-size: clamp(48px, 7vw, 72px);
+  }
+
+  .founders,
+  .competencies,
+  .projects,
+  .roadmap,
+  .formats,
+  .cta {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+
+  .founders {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .founders-left {
+    width: 100%;
+  }
+
+  .founder-photos {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+  }
+
+  .founder-photo {
+    position: relative;
+    inset: auto;
+    width: 100%;
+    max-width: none;
+  }
+
+  .founder-photo img {
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+
+  .competency-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .project-row {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  }
+
+  .project-media img,
+  .project-nda-media img {
+    width: 100%;
+    max-width: 100%;
+    object-fit: contain;
+  }
+
+  .project-stats {
+    gap: 12px;
+  }
+
+  .project-stats > div {
+    min-width: 0;
+  }
+
+  .formats-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .formats-intro {
+    width: 100%;
+    max-width: 760px;
+  }
+
+  .footer-columns {
+    grid-template-columns: minmax(220px, 1.4fr) repeat(3, minmax(0, 1fr));
+    gap: 24px;
+  }
+}
+
+@media (max-width: 768px) {
+  .site-header {
+    padding: 18px 20px;
+  }
+
+  .site-header .logo {
+    position: relative;
+    z-index: 12;
+  }
+
+  .nav-toggle {
+    display: flex !important;
+    position: relative;
+    z-index: 12;
+    flex: 0 0 auto;
+  }
+
+  .site-header > .nav-left,
+  .site-header > .nav-right {
+    display: none;
+  }
+
+  .site-header.nav-open > .nav-left,
+  .site-header.nav-open > .nav-right {
+    display: block;
+    position: absolute;
+    left: 0;
+    right: 0;
+    width: 100%;
+    z-index: 11;
+    background: var(--color-bg-base, #F0F1ED);
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .site-header.nav-open > .nav-left {
+    top: 100%;
+    padding-top: 18px;
+  }
+
+  .site-header.nav-open > .nav-right {
+    top: calc(100% + 82px);
+    padding-bottom: 20px;
+  }
+
+  .site-header.nav-open nav ul {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+  }
+
+  .site-header.nav-open nav li {
+    width: 100%;
+  }
+
+  .site-header.nav-open nav a {
+    display: block;
+    width: 100%;
+    padding: 10px 0;
+    font-size: 14px;
+  }
+
+  .hero {
+    min-height: 100svh;
+  }
+
+  .hero-inner {
+    width: 100%;
+    max-width: none;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .hero h1,
+  .hero-inner h1 {
+    max-width: 100%;
+    font-size: clamp(42px, 11vw, 68px);
+    line-height: 0.98;
+  }
+
+  .btn,
+  #hero-cta {
+    left: 20px !important;
+    right: 20px !important;
+    width: auto !important;
+    max-width: calc(100vw - 40px);
+    transform: none !important;
+  }
+
+  .btn:hover,
+  #hero-cta:hover {
+    transform: translateY(-4px) !important;
+  }
+
+  .btn:active,
+  #hero-cta:active {
+    transform: translateY(-1px) scale(0.97) !important;
+  }
+
+  .btn-label {
+    white-space: normal;
+  }
+
+  .stats {
+    position: relative;
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1px;
+    min-height: 0 !important;
+    height: auto !important;
+    padding: 340px 0 0 !important;
+    overflow: hidden;
+  }
+
+  .stats-orbit {
+    display: block !important;
+    top: 250px !important;
+    left: 50% !important;
+    transform: translate(-50%, -50%) scale(0.62) !important;
+    opacity: 0.42 !important;
+  }
+
+  .stats.is-fullbleed .stats-orbit {
+    opacity: 0.55 !important;
+  }
+
+  .stats .stat,
+  .stat.corner-tl,
+  .stat.corner-tr,
+  .stat.corner-bl,
+  .stat.corner-br {
+    position: static !important;
+    inset: auto !important;
+    transform: none !important;
+    width: auto !important;
+    min-height: 180px;
+    padding: 24px 20px;
+  }
+
+  .stat-value {
+    white-space: normal;
+  }
+
+  .founders,
+  .competencies,
+  .projects,
+  .roadmap,
+  .formats,
+  .cta {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .section-heading h2,
+  .roadmap-heading h2,
+  .formats-intro h2,
+  .cta h2 {
+    max-width: 100%;
+    font-size: clamp(38px, 8.5vw, 58px);
+    line-height: 1;
+  }
+
+  .section-heading .sub,
+  .roadmap-heading .sub {
+    max-width: 100%;
+  }
+
+  .founder-photos {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .founder-name-badge {
+    max-width: calc(100% - 20px);
+    white-space: normal;
+  }
+
+  .competency-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .competency-card {
+    width: 100%;
+  }
+
+  .competency-tags {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .competency-tags span {
+    max-width: 100%;
+    white-space: normal;
+  }
+
+  .project-row,
+  .project-row.reverse {
+    display: flex !important;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .project-row.reverse .project-media {
+    order: -1;
+  }
+
+  .project-media,
+  .project-card {
+    width: 100% !important;
+    max-width: none !important;
+  }
+
+  .project-media {
+    min-height: 0 !important;
+  }
+
+  .project-media img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+
+  .project-card,
+  .project-nda-body {
+    padding: 28px 24px;
+  }
+
+  .project-card-head {
+    align-items: flex-start;
+  }
+
+  .project-card h3,
+  .project-nda-body h3 {
+    font-size: clamp(28px, 7vw, 42px);
+  }
+
+  .project-stats {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    width: 100%;
+  }
+
+  .project-stats .label,
+  .project-stats .value {
+    white-space: normal;
+  }
+
+  .project-nda-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .project-nda-card {
+    width: 100%;
+  }
+
+  .project-nda-media {
+    min-height: 0 !important;
+  }
+
+  .project-nda-media img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+
+  .formats-layout {
+    display: block;
+  }
+
+  .formats-intro {
+    margin-bottom: 36px;
+  }
+
+  .formats-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .format-card,
+  .format-card.wide {
+    width: 100%;
+    grid-column: auto;
+  }
+
+  .format-card.wide {
+    grid-column: 1 / -1;
+  }
+
+  .contact-cards {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    width: auto;
+    max-width: none;
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+
+  .contact-card {
+    width: 100%;
+    max-width: none;
+    flex-basis: auto;
+  }
+
+  .footer-inner {
+    width: auto;
+    max-width: none;
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+
+  .footer-columns {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 32px 24px;
+  }
+
+  .footer-brand {
+    grid-column: 1 / -1;
+  }
+
+  .footer-bottom {
+    gap: 20px;
+  }
+}
+
+@media (max-width: 560px) {
+  .site-header {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .site-header.nav-open > .nav-left,
+  .site-header.nav-open > .nav-right {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .hero-inner {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .hero h1,
+  .hero-inner h1 {
+    font-size: clamp(38px, 12vw, 56px);
+    line-height: 0.96;
+  }
+
+  .btn,
+  #hero-cta {
+    left: 16px !important;
+    right: 16px !important;
+    max-width: calc(100vw - 32px);
+  }
+
+  .stats {
+    display: flex !important;
+    flex-direction: column;
+    align-items: center;
+    gap: 44px;
+    padding: 370px 20px 80px !important;
+    margin: 0 !important;
+    min-height: auto !important;
+    height: auto !important;
+    transform: none !important;
+    overflow: hidden;
+  }
+
+  .stats.is-fullbleed {
+    min-height: auto !important;
+    margin: 0 !important;
+    transform: none !important;
+  }
+
+  .stats-orbit {
+    display: block !important;
+    top: 276px !important;
+    left: 50% !important;
+    transform: translate(-50%, -50%) scale(0.72) !important;
+    opacity: 0.42 !important;
+  }
+
+  .stats.is-fullbleed .stats-orbit {
+    opacity: 0.52 !important;
+  }
+
+  .stats .stat,
+  .stat.corner-tl,
+  .stat.corner-tr,
+  .stat.corner-bl,
+  .stat.corner-br {
+    position: static !important;
+    inset: auto !important;
+    transform: none !important;
+    width: 100% !important;
+    max-width: 225px !important;
+    min-height: 0 !important;
+    padding: 0 0 80px !important;
+    text-align: left;
+    opacity: 1 !important;
+  }
+
+  .stat.corner-tl {
+    order: 1;
+    margin-top: 56px;
+  }
+  .stat.corner-tr { order: 2; }
+  .stat.corner-bl { order: 3; }
+  .stat.corner-br { order: 4; }
+
+  .stat-label,
+  .stat-value,
+  .stat-desc {
+    width: 100%;
+  }
+
+  .stat-desc {
+    margin-top: 16px;
+  }
+
+  .founders,
+  .competencies,
+  .projects,
+  .roadmap,
+  .formats,
+  .cta {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .section-heading h2,
+  .roadmap-heading h2,
+  .formats-intro h2,
+  .cta h2 {
+    font-size: clamp(34px, 10.5vw, 48px);
+  }
+
+  .founder-photos {
+    display: flex;
+    flex-direction: column;
+    grid-template-columns: none;
+    gap: 140px;
+  }
+
+  .founder-photo {
+    width: 100%;
+  }
+
+  .founder-photo--1 .founder-name-badge {
+    left: 0;
+    right: auto;
+    bottom: 0;
+    top: auto;
+    transform: translateY(50%);
+  }
+
+  .founder-photo--2 .founder-name-badge {
+    right: 0;
+    left: auto;
+    top: 0;
+    bottom: auto;
+    transform: translateY(-50%);
+  }
+
+  .project-card,
+  .project-nda-body {
+    padding: 24px 18px;
+  }
+
+  .project-stats {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .project-stats > div {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 16px;
+    width: 100%;
+  }
+
+  .project-stats .value {
+    text-align: right;
+  }
+
+  .formats-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .format-card.wide {
+    grid-column: auto;
+  }
+
+  .contact-cards,
+  .footer-inner {
+    margin-left: 16px;
+    margin-right: 16px;
+  }
+
+  .contact-card {
+    padding-left: 18px;
+    padding-right: 18px;
+  }
+
+  .contact-card .value {
+    font-size: clamp(18px, 5.5vw, 28px);
+  }
+
+  .footer-columns {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-brand {
+    grid-column: auto;
+  }
+
+  .footer-bottom {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .footer-to-top {
+    align-self: flex-end;
+  }
+}
+
+
+/* Restore the original mobile founder composition. */
+@media (max-width: 560px) {
+  .founders {
+    gap: 160px;
+  }
+
+  .founders-left {
+    display: contents;
+  }
+
+  .founders .section-heading {
+    order: 1;
+  }
+
+  .founder-photos {
+    order: 2;
+    display: flex !important;
+    flex-direction: column !important;
+    grid-template-columns: none !important;
+    gap: 140px !important;
+    width: 100%;
+    margin-top: -128px;
+  }
+
+  .founder-details {
+    order: 3;
+  }
+
+  .founder-photo {
+    position: relative;
+    width: 100%;
+    max-width: none;
+  }
+
+  .founder-photo img {
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+  }
+
+  .founder-name-badge {
+    position: absolute;
+    width: 250px;
+    height: 100px;
+    max-width: calc(100% - 20px);
+    white-space: nowrap;
+  }
+
+  .founder-photo--1 .founder-name-badge {
+    left: 0;
+    right: auto;
+    top: auto;
+    bottom: 0;
+    transform: translateY(50%);
+  }
+
+  .founder-photo--2 .founder-name-badge {
+    left: auto;
+    right: 0;
+    top: 0;
+    bottom: auto;
+    transform: translateY(-50%);
+  }
+}
+
+@media (max-width: 390px) {
+  .hero h1,
+  .hero-inner h1 {
+    font-size: clamp(34px, 11.5vw, 44px);
+  }
+
+  .section-heading h2,
+  .roadmap-heading h2,
+  .formats-intro h2,
+  .cta h2 {
+    font-size: clamp(31px, 10vw, 40px);
+  }
+
+  .project-card h3,
+  .project-nda-body h3 {
+    font-size: clamp(25px, 8vw, 34px);
+  }
+
+  .project-card,
+  .project-nda-body,
+  .format-card,
+  .competency-card {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .btn,
+  #hero-cta {
+    left: 12px !important;
+    right: 12px !important;
+    max-width: calc(100vw - 24px);
+  }
+
+  .btn-label {
+    font-size: 12px;
+  }
+}
+
+
+/* Founder portraits: grayscale by default, color on hover or mobile tap. */
+.founder-photo img {
+  filter: grayscale(1);
+  transition: filter 0.45s ease;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .founder-photo:hover img {
+    filter: grayscale(0);
+  }
+}
+
+.founder-photo.is-color img {
+  filter: grayscale(0);
+}
+
+
+/* Mobile CTA: keep the hero clean; show a compact fixed CTA after the hero. */
+@media (max-width: 768px) {
+  #hero-cta {
+    left: 50% !important;
+    right: auto !important;
+    bottom: 20px !important;
+    width: max-content !important;
+    max-width: calc(100vw - 32px);
+    gap: 20px;
+    padding: 10px 16px 10px 10px;
+    transform: translateX(-50%) translateY(16px) !important;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition:
+      opacity 0.3s ease,
+      transform 0.3s ease,
+      visibility 0.3s ease,
+      border-color 0.55s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  #hero-cta .btn-label {
+    font-size: 17px;
+    white-space: nowrap;
+  }
+
+  #hero-cta .btn-icon {
+    width: 44px;
+    height: 44px;
+  }
+
+  #hero-cta.is-mobile-visible {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transform: translateX(-50%) translateY(0) !important;
+  }
+
+  #hero-cta.is-mobile-visible:hover {
+    transform: translateX(-50%) translateY(-4px) !important;
+  }
+
+  #hero-cta.is-mobile-visible:active {
+    transform: translateX(-50%) translateY(-1px) scale(0.97) !important;
+  }
+}
+
+
+/* Keep NDA case cards equal-height on desktop. */
+@media (min-width: 769px) {
+  .project-nda-grid {
+    align-items: stretch;
+  }
+
+  .project-nda-card {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .project-nda-body {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .project-nda-body .nda-badge {
+    align-self: flex-start;
+  }
+
+  .project-nda-body .project-stats {
+    margin-top: auto;
+  }
+}
+
+
+/* Project case title spacing and long Get&Sign successor brand treatment. */
+.project-card-head {
+  gap: 12px;
+}
+
+.project-icon {
+  flex: 0 0 40px;
+}
+
+@media (min-width: 769px) {
+  .project-card h3.olive {
+    font-size: 30px;
+    line-height: 1.05;
+    letter-spacing: -0.8px;
+    text-transform: none;
+    white-space: nowrap;
+  }
+}
+
+@media (max-width: 768px) {
+  .project-card h3.olive {
+    text-transform: none;
+    letter-spacing: -0.5px;
+    white-space: normal;
+  }
+}
+
+/* Roadmap keeps the original spacing/composition; only scale typography for narrower screens. */
+@media (min-width: 447px) and (max-width: 768px) {
+  .roadmap-item .roadmap-number {
+    font-size: clamp(96px, 16vw, 132px);
+    line-height: 1;
+  }
+
+  .roadmap-content h3 {
+    font-size: clamp(38px, 7vw, 52px);
+    line-height: 1.05;
+  }
+
+  .roadmap-content p {
+    max-width: 100%;
+  }
+}
+
+/* Slightly tighten roadmap step spacing on mobile without changing composition. */
+@media (max-width: 768px) {
+  .roadmap-list {
+    gap: 128px;
+  }
+}
+
+
+/* Founder detail copy matches project case description typography. */
+.founder-block li {
+  font: var(--text-mono-body-sm);
+  text-transform: none;
+}
+
+
+/* Desktop case metrics: spread standard case metrics evenly across the card width. */
+@media (min-width: 769px) {
+  .project-card .project-stats {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 0;
+    width: 100%;
+  }
+
+  .project-card .project-stats > div {
+    min-width: 0;
+  }
+
+  .project-card .project-stats > div:nth-child(2) {
+    text-align: center;
+  }
+
+  .project-card .project-stats > div:nth-child(3) {
+    text-align: right;
+  }
+
+  .project-nda-body .project-stats {
+    display: flex;
+    gap: 32px;
+    width: auto;
+  }
+
+  .project-nda-body .project-stats > div {
+    text-align: left;
+  }
+}
+
+
+/* Desktop stats expand continuously with scroll while preserving the same endpoints. */
+@media (min-width: 769px) {
+  .stats {
+    --stats-progress: 0;
+    --stats-side-inset: max(0px, calc((100vw - 1280px) / 2));
+    margin-left: var(--stats-side-inset);
+    margin-right: var(--stats-side-inset);
+    min-height: calc(560px + (100vh - 560px) * var(--stats-progress));
+    transform: translateY(0) scale(calc(0.92 + 0.08 * var(--stats-progress)));
+    transition: none;
+  }
+
+  .stats.is-fullbleed {
+    margin-left: var(--stats-side-inset);
+    margin-right: var(--stats-side-inset);
+    min-height: calc(560px + (100vh - 560px) * var(--stats-progress));
+    transform: translateY(0) scale(calc(0.92 + 0.08 * var(--stats-progress)));
+  }
+
+  .stats .stat,
+  .stats .stats-orbit {
+    opacity: var(--stats-progress);
+  }
+}
+
+
+/* Desktop hero stays clean/full-screen; stats reveal begins only after scrolling below it. */
+@media (min-width: 769px) {
+  .hero {
+    min-height: 100vh;
+    width: 100%;
+  }
+
+  #hero-cta-spacer {
+    height: 0 !important;
+  }
+
+  #hero-cta {
+    bottom: 32px !important;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transform: translateX(-50%) translateY(16px);
+    transition:
+      opacity 0.3s ease,
+      transform 0.3s ease,
+      visibility 0.3s ease,
+      border-color 0.55s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  #hero-cta.is-desktop-visible {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transform: translateX(-50%) translateY(0);
+  }
+
+  #hero-cta.is-desktop-visible:hover {
+    transform: translateX(-50%) translateY(-4px);
+  }
+
+  #hero-cta.is-desktop-visible:active {
+    transform: translateX(-50%) translateY(-1px) scale(0.97);
+  }
+
+  .stats {
+    margin-top: 0;
+  }
+}
+
+
+/* Mobile case metrics: labels left, values right, stacked row by row. */
+@media (max-width: 768px) {
+  .project-stats {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    width: 100%;
+  }
+
+  .project-stats > div {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 16px;
+    width: 100%;
+    text-align: left;
+  }
+
+  .project-stats .label {
+    text-align: left;
+  }
+
+  .project-stats .value {
+    margin-left: auto;
+    text-align: right;
+  }
+}
+
+
+/* Restore roadmap step reveal animation after responsive overrides. */
+.roadmap-item .roadmap-number {
+  opacity: 0;
+  transform: translateY(28px);
+  transition:
+    opacity 1.8s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 1.8s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.roadmap-item .roadmap-content {
+  opacity: 0;
+  transform: translateY(28px);
+  transition:
+    opacity 1.8s cubic-bezier(0.22, 1, 0.36, 1) 0.35s,
+    transform 1.8s cubic-bezier(0.22, 1, 0.36, 1) 0.35s;
+}
+
+.roadmap-item.is-revealed .roadmap-number {
+  opacity: 0.1;
+  transform: translateY(0);
+}
+
+.roadmap-item.is-revealed .roadmap-content {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+/* Restore partnership format card reveal animation after responsive overrides. */
+.format-card {
+  opacity: 0;
+  transform: translateY(32px);
+  transition:
+    opacity 0.9s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.format-card.is-revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .format-card {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
+
+/* Simpler contact-card hover: no expanding fill, only a subtle lift and tint. */
+.contact-card::before {
+  display: none;
+}
+
+.contact-card {
+  transition:
+    border-color 0.25s ease,
+    background-color 0.25s ease,
+    transform 0.25s ease;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .contact-card:hover {
+    border-color: var(--color-accent-primary);
+    background: var(--color-accent-green-tint);
+    transform: translateY(-2px);
+  }
+}
+
+.contact-card:active {
+  transform: translateY(0);
+}
+
+
+/* Footer: one stable grid across desktop, tablet and mobile. */
+.site-footer {
+  width: 100%;
+}
+
+.footer-inner {
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  align-items: stretch;
+  text-align: left;
+}
+
+.footer-columns {
+  display: grid;
+  grid-template-columns: minmax(280px, 2fr) minmax(120px, 0.8fr) minmax(180px, 1fr) minmax(220px, 1.25fr);
+  gap: 48px;
+  width: 100%;
+  align-items: start;
+}
+
+.footer-brand {
+  grid-column: auto;
+  flex-basis: auto;
+  align-items: flex-start;
+  gap: 24px;
+}
+
+.footer-brand p {
+  margin: 0;
+  max-width: 360px;
+  text-align: left;
+}
+
+.footer-links {
+  align-items: flex-start;
+  gap: 24px;
+}
+
+.footer-links ul {
+  align-items: flex-start;
+  gap: 18px;
+}
+
+.footer-contacts a {
+  align-items: flex-start;
+}
+
+.footer-bottom {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 24px;
+  text-align: left;
+}
+
+.footer-bottom p {
+  text-align: left;
+  max-width: 760px;
+}
+
+.footer-legal:empty {
+  display: none;
+}
+
+.footer-to-top {
+  grid-column: 2;
+  grid-row: 1;
+  justify-self: end;
+}
+
+@media (max-width: 1024px) {
+  .footer-columns {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 40px 32px;
+  }
+
+  .footer-brand {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 560px) {
+  .site-footer {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .footer-inner {
+    margin-left: 0;
+    margin-right: 0;
+    gap: 48px;
+  }
+
+  .footer-columns {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+
+  .footer-brand {
+    grid-column: auto;
+  }
+
+  .footer-bottom {
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: end;
+    gap: 20px;
+  }
+
+  .footer-bottom p {
+    text-align: left;
+  }
+
+  .footer-to-top {
+    align-self: end;
+    justify-self: end;
+  }
+}
+
+
+/* Mobile contact-card tap mirrors the desktop hover animation. */
+@media (hover: none), (pointer: coarse) {
+  .contact-card:active {
+    border-color: var(--color-accent-primary);
+    background: var(--color-accent-green-tint);
+    transform: translateY(-2px);
+  }
+}
+
+
+/* 360px fix: remove alternating competency offset only on very small screens. */
+@media (max-width: 390px) {
+  .competency-card:nth-child(2n) {
+    margin-top: 0 !important;
+  }
+
+  .competency-card {
+    width: 100%;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+}
+
+
+/* Dedicated 1024px layout fix. Keep established mobile and desktop layouts untouched. */
+@media (min-width: 980px) and (max-width: 1048px) {
+  .projects,
+  .founders,
+  .competencies,
+  .roadmap,
+  .formats,
+  .cta {
+    padding-left: 32px;
+    padding-right: 32px;
+  }
+
+  /* Cases: remove desktop overlaps that no longer fit a 1024px viewport. */
+  .project-row,
+  .project-row.reverse {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+  }
+
+  .project-row:first-of-type .project-card {
+    margin-left: 0;
+  }
+
+  .project-row.reverse .project-card {
+    width: 100%;
+    max-width: none;
+    justify-self: stretch;
+  }
+
+  .project-card {
+    padding: 30px 26px;
+  }
+
+  .project-card h3 {
+    font-size: clamp(28px, 3.2vw, 38px);
+  }
+
+  .project-card h3.olive {
+    font-size: 25px;
+    white-space: normal;
+  }
+
+  .project-media {
+    height: 420px;
+  }
+
+  /* Partnership formats: use a real stacked grid instead of conflicting flex rules. */
+  .formats-layout {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .formats-intro {
+    width: 100%;
+    max-width: 720px;
+  }
+
+  .formats-grid {
+    width: 100%;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  /* Keep founder/competency cards inside the viewport. */
+  .founder-photos,
+  .competency-grid {
+    width: 100%;
+  }
+
+  .competency-card {
+    min-width: 0;
+  }
+}
+
+
+/* 1024px stats: balanced spacing around the center. */
+@media (min-width: 980px) and (max-width: 1048px) {
+  .stat.corner-tl,
+  .stat.corner-bl {
+    left: calc(50% - 400px);
+  }
+
+  .stat.corner-tr,
+  .stat.corner-br {
+    left: calc(50% + 200px);
+  }
+}
+
+
+/* 1024px founders: place Ivan badge at the bottom-right of his photo. */
+@media (min-width: 980px) and (max-width: 1048px) {
+  .founder-photo--2 .founder-name-badge {
+    right: 0;
+    left: auto;
+    top: auto;
+    bottom: 0;
+    transform: translateY(50%);
+  }
+}
+
+
+
+/* 1024px roadmap: align Hypothesis to the Launch MVP title baseline. */
+@media (min-width: 980px) and (max-width: 1048px) {
+  .roadmap-item:nth-of-type(3) .roadmap-content h3 {
+    position: relative;
+    left: -28px;
+  }
+}
+
+
+/* 390px competencies: align cards 2 and 4 with cards 1 and 3 on the left. */
+@media (max-width: 390px) {
+  .competency-card:nth-child(2),
+  .competency-card:nth-child(4) {
+    margin-left: 0 !important;
+    transform: none !important;
+    justify-self: stretch;
+  }
+}
+
+
+/* 390px competencies: use identical inner horizontal padding for all cards. */
+@media (max-width: 390px) {
+  .competency-card:nth-child(2),
+  .competency-card:nth-child(4) {
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+  }
+}
