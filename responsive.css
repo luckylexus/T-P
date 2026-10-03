@@ -1138,3 +1138,31 @@ h3 {
     text-align: right;
   }
 }
+
+
+/* Restore roadmap step reveal animation after responsive overrides. */
+.roadmap-item .roadmap-number {
+  opacity: 0;
+  transform: translateY(28px);
+  transition:
+    opacity 1.8s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 1.8s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.roadmap-item .roadmap-content {
+  opacity: 0;
+  transform: translateY(28px);
+  transition:
+    opacity 1.8s cubic-bezier(0.22, 1, 0.36, 1) 0.35s,
+    transform 1.8s cubic-bezier(0.22, 1, 0.36, 1) 0.35s;
+}
+
+.roadmap-item.is-revealed .roadmap-number {
+  opacity: 0.1;
+  transform: translateY(0);
+}
+
+.roadmap-item.is-revealed .roadmap-content {
+  opacity: 1;
+  transform: translateY(0);
+}
