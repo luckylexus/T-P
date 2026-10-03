@@ -467,7 +467,7 @@
       scaleMobile: 1.30,
       color: 0xcbdec8,
       backgroundColor: 0xf0f1ed, // --color-bg-base
-      spacing: 8.50,
+      spacing: window.matchMedia('(min-width: 769px)').matches ? 18.00 : 8.50,
       chaos: 2.50
     });
   </script>
