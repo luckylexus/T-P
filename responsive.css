@@ -485,47 +485,6 @@ h3 {
     height: auto;
   }
 
-  .roadmap-list {
-    display: flex !important;
-    flex-direction: column;
-    width: 100%;
-  }
-
-  .roadmap-grid-lines {
-    display: none !important;
-  }
-
-  .roadmap-item,
-  .roadmap-item.left,
-  .roadmap-item.right {
-    position: relative !important;
-    left: auto !important;
-    right: auto !important;
-    transform: none;
-    width: 100% !important;
-    max-width: none !important;
-    margin-left: 0 !important;
-    margin-right: 0 !important;
-    display: grid;
-    grid-template-columns: 64px minmax(0, 1fr);
-    gap: 18px;
-  }
-
-  .roadmap-item.is-revealed,
-  .roadmap-item.left.is-revealed,
-  .roadmap-item.right.is-revealed {
-    transform: none !important;
-  }
-
-  .roadmap-number {
-    width: 64px;
-  }
-
-  .roadmap-content {
-    width: 100%;
-    max-width: none;
-  }
-
   .formats-layout {
     display: block;
   }
@@ -746,17 +705,6 @@ h3 {
 
   .project-stats .value {
     text-align: right;
-  }
-
-  .roadmap-item,
-  .roadmap-item.left,
-  .roadmap-item.right {
-    grid-template-columns: 48px minmax(0, 1fr);
-    gap: 14px;
-  }
-
-  .roadmap-number {
-    width: 48px;
   }
 
   .formats-grid {
@@ -1024,5 +972,22 @@ h3 {
     text-transform: none;
     letter-spacing: -0.5px;
     white-space: normal;
+  }
+}
+
+/* Roadmap keeps the original spacing/composition; only scale typography for narrower screens. */
+@media (min-width: 447px) and (max-width: 768px) {
+  .roadmap-item .roadmap-number {
+    font-size: clamp(96px, 16vw, 132px);
+    line-height: 1;
+  }
+
+  .roadmap-content h3 {
+    font-size: clamp(38px, 7vw, 52px);
+    line-height: 1.05;
+  }
+
+  .roadmap-content p {
+    max-width: 100%;
   }
 }
