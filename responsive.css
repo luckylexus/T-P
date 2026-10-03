@@ -1032,3 +1032,29 @@ h3 {
     text-align: right;
   }
 }
+
+
+/* Desktop stats expand continuously with scroll while preserving the same endpoints. */
+@media (min-width: 769px) {
+  .stats {
+    --stats-progress: 0;
+    --stats-side-inset: max(0px, calc((100vw - 1280px) / 2));
+    margin-left: var(--stats-side-inset);
+    margin-right: var(--stats-side-inset);
+    min-height: calc(560px + (100vh - 560px) * var(--stats-progress));
+    transform: translateY(0) scale(calc(0.92 + 0.08 * var(--stats-progress)));
+    transition: none;
+  }
+
+  .stats.is-fullbleed {
+    margin-left: var(--stats-side-inset);
+    margin-right: var(--stats-side-inset);
+    min-height: calc(560px + (100vh - 560px) * var(--stats-progress));
+    transform: translateY(0) scale(calc(0.92 + 0.08 * var(--stats-progress)));
+  }
+
+  .stats .stat,
+  .stats .stats-orbit {
+    opacity: var(--stats-progress);
+  }
+}
