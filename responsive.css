@@ -1344,3 +1344,17 @@ h3 {
     transform: translateY(-2px);
   }
 }
+
+
+/* 360px fix: remove alternating competency offset only on very small screens. */
+@media (max-width: 390px) {
+  .competency-card:nth-child(2n) {
+    margin-top: 0 !important;
+  }
+
+  .competency-card {
+    width: 100%;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+}
