@@ -1458,3 +1458,15 @@ h3 {
     left: calc(50% + 160px);
   }
 }
+
+
+/* 1024px founders: place Ivan badge at the bottom-right of his photo. */
+@media (min-width: 980px) and (max-width: 1048px) {
+  .founder-photo--2 .founder-name-badge {
+    right: 0;
+    left: auto;
+    top: auto;
+    bottom: 0;
+    transform: translateY(50%);
+  }
+}
