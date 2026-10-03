@@ -677,5 +677,22 @@
       });
     })();
   </script>
+
+  <script>
+    // Founder portraits: tap toggles color on touch devices.
+    (function () {
+      var portraits = document.querySelectorAll('.founder-photo');
+      if (!portraits.length) return;
+
+      portraits.forEach(function (portrait) {
+        portrait.addEventListener('click', function () {
+          if (window.matchMedia('(hover: none), (pointer: coarse)').matches) {
+            portrait.classList.toggle('is-color');
+          }
+        });
+      });
+    })();
+  </script>
+
 </body>
 </html>
