@@ -456,7 +456,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.0/p5.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/vanta/0.5.24/vanta.trunk.min.js"></script>
   <script>
-    VANTA.TRUNK({
+    var heroVanta = VANTA.TRUNK({
       el: "#hero-vanta",
       mouseControls: true,
       touchControls: true,
@@ -470,6 +470,18 @@
       spacing: window.matchMedia('(min-width: 769px)').matches ? 18.00 : 8.50,
       chaos: 2.50
     });
+
+    // TRUNK advances its movement by a fixed amount per rendered frame.
+    // Lowering only its desktop p5 frame rate slows the flowing lines
+    // without changing their geometry, density or mobile behaviour.
+    if (
+      window.matchMedia('(min-width: 769px)').matches &&
+      heroVanta &&
+      heroVanta.p5 &&
+      typeof heroVanta.p5.frameRate === 'function'
+    ) {
+      heroVanta.p5.frameRate(30);
+    }
   </script>
 
   <script>
