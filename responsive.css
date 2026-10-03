@@ -1472,10 +1472,18 @@ h3 {
 }
 
 
-/* 1024px roadmap: nudge the long sixth title/content slightly right. */
+
+/* 1024px roadmap: align right-side titles to the Launch MVP title baseline. */
 @media (min-width: 980px) and (max-width: 1048px) {
-  .roadmap-item:nth-of-type(7) .roadmap-content {
+  /* Step 2: Гипотеза — slightly left to match the visual start of Запуск MVP. */
+  .roadmap-item:nth-of-type(3) .roadmap-content h3 {
     position: relative;
-    left: 40px;
+    left: -28px;
+  }
+
+  /* Step 6: Масштабирование — slightly right to match the same line. */
+  .roadmap-item:nth-of-type(7) .roadmap-content h3 {
+    position: relative;
+    left: 56px;
   }
 }
