@@ -998,3 +998,10 @@ h3 {
     gap: 128px;
   }
 }
+
+
+/* Founder section headings use the same typography as competency card H3s. */
+.founder-block h3 {
+  font: var(--text-mono-heading-1);
+  color: var(--color-text-primary);
+}
