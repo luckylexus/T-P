@@ -1111,15 +1111,30 @@ h3 {
 }
 
 
-/* Mobile case metrics: align labels and values to the left. */
+/* Mobile case metrics: labels left, values right, stacked row by row. */
 @media (max-width: 768px) {
+  .project-stats {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    width: 100%;
+  }
+
   .project-stats > div {
-    justify-content: flex-start;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 16px;
+    width: 100%;
     text-align: left;
   }
 
-  .project-stats .label,
-  .project-stats .value {
+  .project-stats .label {
     text-align: left;
+  }
+
+  .project-stats .value {
+    margin-left: auto;
+    text-align: right;
   }
 }
