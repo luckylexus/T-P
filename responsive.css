@@ -1487,3 +1487,14 @@ h3 {
     left: 56px;
   }
 }
+
+
+/* 390px competencies: align cards 2 and 4 with cards 1 and 3 on the left. */
+@media (max-width: 390px) {
+  .competency-card:nth-child(2),
+  .competency-card:nth-child(4) {
+    margin-left: 0 !important;
+    transform: none !important;
+    justify-self: stretch;
+  }
+}
