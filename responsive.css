@@ -1,0 +1,745 @@
+/* Responsive overrides for T&P Partners.
+   Loaded after styles.css to preserve the original desktop design. */
+
+html,
+body {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: clip;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  min-width: 0;
+}
+
+img,
+svg,
+video,
+canvas {
+  max-width: 100%;
+}
+
+img {
+  height: auto;
+}
+
+h1,
+h2,
+h3,
+p,
+li,
+span,
+a {
+  overflow-wrap: break-word;
+}
+
+h1,
+h2,
+h3 {
+  text-wrap: balance;
+}
+
+.contact-card .value,
+.footer-contacts a,
+.footer-contacts span {
+  overflow-wrap: anywhere;
+}
+
+@media (max-width: 1200px) {
+  .site-header {
+    padding-left: 32px;
+    padding-right: 32px;
+    gap: 24px;
+  }
+
+  .nav-left ul,
+  .nav-right ul {
+    gap: 20px;
+  }
+
+  .hero-inner {
+    width: min(100%, 1080px);
+    padding-left: 32px;
+    padding-right: 32px;
+  }
+
+  .hero h1,
+  .hero-inner h1 {
+    font-size: clamp(52px, 6.3vw, 84px);
+    line-height: 0.98;
+  }
+
+  .founders,
+  .competencies,
+  .projects,
+  .roadmap,
+  .formats,
+  .cta {
+    padding-left: 32px;
+    padding-right: 32px;
+  }
+
+  .founders {
+    gap: 40px;
+  }
+
+  .competency-grid {
+    gap: 16px;
+  }
+
+  .project-row,
+  .project-nda-grid {
+    gap: 20px;
+  }
+
+  .project-card,
+  .project-nda-body,
+  .format-card {
+    padding-left: clamp(24px, 3vw, 40px);
+    padding-right: clamp(24px, 3vw, 40px);
+  }
+
+  .formats-layout {
+    gap: 40px;
+  }
+
+  .contact-cards,
+  .footer-inner {
+    margin-left: 32px;
+    margin-right: 32px;
+    width: auto;
+  }
+}
+
+@media (max-width: 1024px) {
+  .site-header {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+
+  .nav-left ul,
+  .nav-right ul {
+    gap: 14px;
+  }
+
+  .nav-left a,
+  .nav-right a {
+    font-size: 12px;
+  }
+
+  .hero-inner {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+
+  .hero h1,
+  .hero-inner h1 {
+    font-size: clamp(48px, 7vw, 72px);
+  }
+
+  .founders,
+  .competencies,
+  .projects,
+  .roadmap,
+  .formats,
+  .cta {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+
+  .founders {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .founders-left {
+    width: 100%;
+  }
+
+  .founder-photos {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+  }
+
+  .founder-photo {
+    position: relative;
+    inset: auto;
+    width: 100%;
+    max-width: none;
+  }
+
+  .founder-photo img {
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+
+  .competency-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .project-row {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  }
+
+  .project-media img,
+  .project-nda-media img {
+    width: 100%;
+    max-width: 100%;
+    object-fit: contain;
+  }
+
+  .project-stats {
+    gap: 12px;
+  }
+
+  .project-stats > div {
+    min-width: 0;
+  }
+
+  .formats-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .formats-intro {
+    width: 100%;
+    max-width: 760px;
+  }
+
+  .footer-columns {
+    grid-template-columns: minmax(220px, 1.4fr) repeat(3, minmax(0, 1fr));
+    gap: 24px;
+  }
+}
+
+@media (max-width: 768px) {
+  .site-header {
+    padding: 18px 20px;
+  }
+
+  .site-header .logo {
+    position: relative;
+    z-index: 12;
+  }
+
+  .nav-toggle {
+    display: flex !important;
+    position: relative;
+    z-index: 12;
+    flex: 0 0 auto;
+  }
+
+  .site-header > .nav-left,
+  .site-header > .nav-right {
+    display: none;
+  }
+
+  .site-header.nav-open > .nav-left,
+  .site-header.nav-open > .nav-right {
+    display: block;
+    position: absolute;
+    left: 0;
+    right: 0;
+    width: 100%;
+    z-index: 11;
+    background: var(--color-bg-base, #F0F1ED);
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .site-header.nav-open > .nav-left {
+    top: 100%;
+    padding-top: 18px;
+  }
+
+  .site-header.nav-open > .nav-right {
+    top: calc(100% + 82px);
+    padding-bottom: 20px;
+  }
+
+  .site-header.nav-open nav ul {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+  }
+
+  .site-header.nav-open nav li {
+    width: 100%;
+  }
+
+  .site-header.nav-open nav a {
+    display: block;
+    width: 100%;
+    padding: 10px 0;
+    font-size: 14px;
+  }
+
+  .hero {
+    min-height: 100svh;
+  }
+
+  .hero-inner {
+    width: 100%;
+    max-width: none;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .hero h1,
+  .hero-inner h1 {
+    max-width: 100%;
+    font-size: clamp(42px, 11vw, 68px);
+    line-height: 0.98;
+  }
+
+  .btn,
+  #hero-cta {
+    left: 20px !important;
+    right: 20px !important;
+    width: auto !important;
+    max-width: calc(100vw - 40px);
+  }
+
+  .btn-label {
+    white-space: normal;
+  }
+
+  .stats {
+    position: relative;
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1px;
+    min-height: 0 !important;
+    height: auto !important;
+    padding: 0 !important;
+  }
+
+  .stats-orbit {
+    display: none !important;
+  }
+
+  .stats .stat,
+  .stat.corner-tl,
+  .stat.corner-tr,
+  .stat.corner-bl,
+  .stat.corner-br {
+    position: static !important;
+    inset: auto !important;
+    transform: none !important;
+    width: auto !important;
+    min-height: 180px;
+    padding: 24px 20px;
+  }
+
+  .stat-value {
+    white-space: normal;
+  }
+
+  .founders,
+  .competencies,
+  .projects,
+  .roadmap,
+  .formats,
+  .cta {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .section-heading h2,
+  .roadmap-heading h2,
+  .formats-intro h2,
+  .cta h2 {
+    max-width: 100%;
+    font-size: clamp(38px, 8.5vw, 58px);
+    line-height: 1;
+  }
+
+  .section-heading .sub,
+  .roadmap-heading .sub {
+    max-width: 100%;
+  }
+
+  .founder-photos {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .founder-name-badge {
+    max-width: calc(100% - 20px);
+    white-space: normal;
+  }
+
+  .competency-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .competency-card {
+    width: 100%;
+  }
+
+  .competency-tags {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .competency-tags span {
+    max-width: 100%;
+    white-space: normal;
+  }
+
+  .project-row,
+  .project-row.reverse {
+    display: flex !important;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .project-row.reverse .project-media {
+    order: -1;
+  }
+
+  .project-media,
+  .project-card {
+    width: 100% !important;
+    max-width: none !important;
+  }
+
+  .project-media {
+    min-height: 0 !important;
+  }
+
+  .project-media img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+
+  .project-card,
+  .project-nda-body {
+    padding: 28px 24px;
+  }
+
+  .project-card-head {
+    align-items: flex-start;
+  }
+
+  .project-card h3,
+  .project-nda-body h3 {
+    font-size: clamp(28px, 7vw, 42px);
+  }
+
+  .project-stats {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    width: 100%;
+  }
+
+  .project-stats .label,
+  .project-stats .value {
+    white-space: normal;
+  }
+
+  .project-nda-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .project-nda-card {
+    width: 100%;
+  }
+
+  .project-nda-media {
+    min-height: 0 !important;
+  }
+
+  .project-nda-media img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+
+  .roadmap-list {
+    display: flex !important;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .roadmap-grid-lines {
+    display: none !important;
+  }
+
+  .roadmap-item,
+  .roadmap-item.left,
+  .roadmap-item.right {
+    position: relative !important;
+    left: auto !important;
+    right: auto !important;
+    transform: none;
+    width: 100% !important;
+    max-width: none !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    display: grid;
+    grid-template-columns: 64px minmax(0, 1fr);
+    gap: 18px;
+  }
+
+  .roadmap-item.is-revealed,
+  .roadmap-item.left.is-revealed,
+  .roadmap-item.right.is-revealed {
+    transform: none !important;
+  }
+
+  .roadmap-number {
+    width: 64px;
+  }
+
+  .roadmap-content {
+    width: 100%;
+    max-width: none;
+  }
+
+  .formats-layout {
+    display: block;
+  }
+
+  .formats-intro {
+    margin-bottom: 36px;
+  }
+
+  .formats-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .format-card,
+  .format-card.wide {
+    width: 100%;
+    grid-column: auto;
+  }
+
+  .format-card.wide {
+    grid-column: 1 / -1;
+  }
+
+  .contact-cards {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    width: auto;
+    max-width: none;
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+
+  .contact-card {
+    width: 100%;
+    max-width: none;
+    flex-basis: auto;
+  }
+
+  .footer-inner {
+    width: auto;
+    max-width: none;
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+
+  .footer-columns {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 32px 24px;
+  }
+
+  .footer-brand {
+    grid-column: 1 / -1;
+  }
+
+  .footer-bottom {
+    gap: 20px;
+  }
+}
+
+@media (max-width: 560px) {
+  .site-header {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .site-header.nav-open > .nav-left,
+  .site-header.nav-open > .nav-right {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .hero-inner {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .hero h1,
+  .hero-inner h1 {
+    font-size: clamp(38px, 12vw, 56px);
+    line-height: 0.96;
+  }
+
+  .btn,
+  #hero-cta {
+    left: 16px !important;
+    right: 16px !important;
+    max-width: calc(100vw - 32px);
+  }
+
+  .stats {
+    grid-template-columns: 1fr;
+  }
+
+  .stats .stat,
+  .stat.corner-tl,
+  .stat.corner-tr,
+  .stat.corner-bl,
+  .stat.corner-br {
+    min-height: 0;
+    padding: 24px 16px;
+  }
+
+  .founders,
+  .competencies,
+  .projects,
+  .roadmap,
+  .formats,
+  .cta {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .section-heading h2,
+  .roadmap-heading h2,
+  .formats-intro h2,
+  .cta h2 {
+    font-size: clamp(34px, 10.5vw, 48px);
+  }
+
+  .founder-photos {
+    grid-template-columns: 1fr;
+  }
+
+  .project-card,
+  .project-nda-body {
+    padding: 24px 18px;
+  }
+
+  .project-stats {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .project-stats > div {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 16px;
+    width: 100%;
+  }
+
+  .project-stats .value {
+    text-align: right;
+  }
+
+  .roadmap-item,
+  .roadmap-item.left,
+  .roadmap-item.right {
+    grid-template-columns: 48px minmax(0, 1fr);
+    gap: 14px;
+  }
+
+  .roadmap-number {
+    width: 48px;
+  }
+
+  .formats-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .format-card.wide {
+    grid-column: auto;
+  }
+
+  .contact-cards,
+  .footer-inner {
+    margin-left: 16px;
+    margin-right: 16px;
+  }
+
+  .contact-card {
+    padding-left: 18px;
+    padding-right: 18px;
+  }
+
+  .contact-card .value {
+    font-size: clamp(18px, 5.5vw, 28px);
+  }
+
+  .footer-columns {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-brand {
+    grid-column: auto;
+  }
+
+  .footer-bottom {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .footer-to-top {
+    align-self: flex-end;
+  }
+}
+
+@media (max-width: 390px) {
+  .hero h1,
+  .hero-inner h1 {
+    font-size: clamp(34px, 11.5vw, 44px);
+  }
+
+  .section-heading h2,
+  .roadmap-heading h2,
+  .formats-intro h2,
+  .cta h2 {
+    font-size: clamp(31px, 10vw, 40px);
+  }
+
+  .project-card h3,
+  .project-nda-body h3 {
+    font-size: clamp(25px, 8vw, 34px);
+  }
+
+  .project-card,
+  .project-nda-body,
+  .format-card,
+  .competency-card {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .btn,
+  #hero-cta {
+    left: 12px !important;
+    right: 12px !important;
+    max-width: calc(100vw - 24px);
+  }
+
+  .btn-label {
+    font-size: 12px;
+  }
+}
