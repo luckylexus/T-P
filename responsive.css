@@ -998,3 +998,31 @@ h3 {
     margin-top: auto;
   }
 }
+
+
+/* Project case title spacing and long Get&Sign successor brand treatment. */
+.project-card-head {
+  gap: 12px;
+}
+
+.project-icon {
+  flex: 0 0 40px;
+}
+
+@media (min-width: 769px) {
+  .project-card h3.olive {
+    font-size: 30px;
+    line-height: 1.05;
+    letter-spacing: -0.8px;
+    text-transform: none;
+    white-space: nowrap;
+  }
+}
+
+@media (max-width: 768px) {
+  .project-card h3.olive {
+    text-transform: none;
+    letter-spacing: -0.5px;
+    white-space: normal;
+  }
+}
