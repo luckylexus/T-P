@@ -991,3 +991,10 @@ h3 {
     max-width: 100%;
   }
 }
+
+/* Slightly tighten roadmap step spacing on mobile without changing composition. */
+@media (max-width: 768px) {
+  .roadmap-list {
+    gap: 128px;
+  }
+}
