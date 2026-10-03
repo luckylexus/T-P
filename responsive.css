@@ -638,7 +638,7 @@ h3 {
 
   .stats-orbit {
     display: block !important;
-    top: 300px !important;
+    top: 276px !important;
     left: 50% !important;
     transform: translate(-50%, -50%) scale(0.72) !important;
     opacity: 0.42 !important;
