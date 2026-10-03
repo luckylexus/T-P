@@ -923,3 +923,51 @@ h3 {
 .founder-photo.is-color img {
   filter: grayscale(0);
 }
+
+
+/* Mobile CTA: keep the hero clean; show a compact fixed CTA after the hero. */
+@media (max-width: 768px) {
+  #hero-cta {
+    left: 50% !important;
+    right: auto !important;
+    bottom: 20px !important;
+    width: max-content !important;
+    max-width: calc(100vw - 32px);
+    gap: 20px;
+    padding: 10px 16px 10px 10px;
+    transform: translateX(-50%) translateY(16px) !important;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition:
+      opacity 0.3s ease,
+      transform 0.3s ease,
+      visibility 0.3s ease,
+      border-color 0.55s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  #hero-cta .btn-label {
+    font-size: 17px;
+    white-space: nowrap;
+  }
+
+  #hero-cta .btn-icon {
+    width: 44px;
+    height: 44px;
+  }
+
+  #hero-cta.is-mobile-visible {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transform: translateX(-50%) translateY(0) !important;
+  }
+
+  #hero-cta.is-mobile-visible:hover {
+    transform: translateX(-50%) translateY(-4px) !important;
+  }
+
+  #hero-cta.is-mobile-visible:active {
+    transform: translateX(-50%) translateY(-1px) scale(0.97) !important;
+  }
+}
