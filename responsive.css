@@ -1360,11 +1360,12 @@ h3 {
 }
 
 
-/* 360px fix: keep the long sixth roadmap title inside the viewport. */
+/* Small-screen roadmap: maximize the long sixth title while keeping it on one line. */
 @media (max-width: 390px) {
   .roadmap-item:nth-of-type(7) .roadmap-content h3 {
-    font-size: clamp(27px, 8.2vw, 32px);
+    font-size: clamp(29px, 8.45vw, 33px);
     line-height: 1.05;
+    white-space: nowrap;
     overflow-wrap: normal;
     word-break: normal;
   }
