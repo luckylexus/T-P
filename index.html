@@ -506,13 +506,24 @@
         // animate, unlike getBoundingClientRect(). This prevents feedback
         // between the animation and its own scroll progress.
         var docTop = statsEl.offsetTop;
-        var startScroll = docTop - window.innerHeight;
-        var endScroll = startScroll + window.innerHeight * 0.62;
-        var progress = clamp(
-          (window.scrollY - startScroll) / Math.max(1, endScroll - startScroll),
-          0,
-          1
-        );
+        var expandStart = docTop - window.innerHeight;
+        var expandEnd = expandStart + window.innerHeight * 0.62;
+        var collapseEnd = expandEnd + window.innerHeight * 0.82;
+
+        var progress;
+        if (window.scrollY <= expandEnd) {
+          progress = clamp(
+            (window.scrollY - expandStart) / Math.max(1, expandEnd - expandStart),
+            0,
+            1
+          );
+        } else {
+          progress = 1 - clamp(
+            (window.scrollY - expandEnd) / Math.max(1, collapseEnd - expandEnd),
+            0,
+            1
+          );
+        }
 
         var startInset = Math.max(0, (window.innerWidth - 1280) / 2);
         var endInset = Math.max(0, (window.innerWidth - 1920) / 2);
@@ -521,9 +532,8 @@
         statsEl.style.setProperty('--stats-progress', progress.toFixed(4));
         statsEl.style.setProperty('--stats-side-inset', sideInset.toFixed(2) + 'px');
 
-        // Desktop no longer needs a discrete final-state class: progress=1
-        // already produces the exact final geometry and opacity. Removing
-        // the class avoids a last-frame jump.
+        // The same continuous progress drives both expansion and collapse,
+        // so there is no discrete state change at the fully-open point.
         statsEl.classList.remove('is-fullbleed');
 
         var desktopCta = document.getElementById('hero-cta');
