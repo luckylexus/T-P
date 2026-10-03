@@ -306,6 +306,17 @@ h3 {
     right: 20px !important;
     width: auto !important;
     max-width: calc(100vw - 40px);
+    transform: none !important;
+  }
+
+  .btn:hover,
+  #hero-cta:hover {
+    transform: translateY(-4px) !important;
+  }
+
+  .btn:active,
+  #hero-cta:active {
+    transform: translateY(-1px) scale(0.97) !important;
   }
 
   .btn-label {
