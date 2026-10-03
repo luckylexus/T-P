@@ -700,7 +700,30 @@ h3 {
   }
 
   .founder-photos {
-    grid-template-columns: 1fr;
+    display: flex;
+    flex-direction: column;
+    grid-template-columns: none;
+    gap: 140px;
+  }
+
+  .founder-photo {
+    width: 100%;
+  }
+
+  .founder-photo--1 .founder-name-badge {
+    left: 0;
+    right: auto;
+    bottom: 0;
+    top: auto;
+    transform: translateY(50%);
+  }
+
+  .founder-photo--2 .founder-name-badge {
+    right: 0;
+    left: auto;
+    top: 0;
+    bottom: auto;
+    transform: translateY(-50%);
   }
 
   .project-card,
