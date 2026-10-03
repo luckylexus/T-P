@@ -1476,6 +1476,6 @@ h3 {
 @media (min-width: 980px) and (max-width: 1048px) {
   .roadmap-item:nth-of-type(7) .roadmap-content {
     position: relative;
-    left: 24px;
+    left: 40px;
   }
 }
