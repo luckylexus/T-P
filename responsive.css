@@ -1470,3 +1470,12 @@ h3 {
     transform: translateY(50%);
   }
 }
+
+
+/* 1024px roadmap: nudge the long sixth title/content slightly right. */
+@media (min-width: 980px) and (max-width: 1048px) {
+  .roadmap-item:nth-of-type(7) .roadmap-content {
+    position: relative;
+    left: 24px;
+  }
+}
