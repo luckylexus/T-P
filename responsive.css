@@ -1007,29 +1007,35 @@ h3 {
 }
 
 
-/* Desktop case metrics: spread three metrics evenly across the card width. */
+/* Desktop case metrics: spread standard case metrics evenly across the card width. */
 @media (min-width: 769px) {
-  .project-card .project-stats,
-  .project-nda-body .project-stats {
+  .project-card .project-stats {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 0;
     width: 100%;
   }
 
-  .project-card .project-stats > div,
-  .project-nda-body .project-stats > div {
+  .project-card .project-stats > div {
     min-width: 0;
   }
 
-  .project-card .project-stats > div:nth-child(2),
-  .project-nda-body .project-stats > div:nth-child(2) {
+  .project-card .project-stats > div:nth-child(2) {
     text-align: center;
   }
 
-  .project-card .project-stats > div:nth-child(3),
-  .project-nda-body .project-stats > div:nth-child(3) {
+  .project-card .project-stats > div:nth-child(3) {
     text-align: right;
+  }
+
+  .project-nda-body .project-stats {
+    display: flex;
+    gap: 32px;
+    width: auto;
+  }
+
+  .project-nda-body .project-stats > div {
+    text-align: left;
   }
 }
 
