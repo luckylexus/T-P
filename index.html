@@ -502,10 +502,12 @@
 
         // Use the section's document position before applying the current
         // frame's visual interpolation. This keeps progress stable.
-        var rect = statsEl.getBoundingClientRect();
-        var docTop = rect.top + window.scrollY;
+        // offsetTop is layout-based and does not change while scale/height
+        // animate, unlike getBoundingClientRect(). This prevents feedback
+        // between the animation and its own scroll progress.
+        var docTop = statsEl.offsetTop;
         var startScroll = docTop - window.innerHeight;
-        var endScroll = docTop - window.innerHeight * 0.38;
+        var endScroll = startScroll + window.innerHeight * 0.62;
         var progress = clamp(
           (window.scrollY - startScroll) / Math.max(1, endScroll - startScroll),
           0,
@@ -518,7 +520,11 @@
 
         statsEl.style.setProperty('--stats-progress', progress.toFixed(4));
         statsEl.style.setProperty('--stats-side-inset', sideInset.toFixed(2) + 'px');
-        statsEl.classList.toggle('is-fullbleed', progress >= 0.999);
+
+        // Desktop no longer needs a discrete final-state class: progress=1
+        // already produces the exact final geometry and opacity. Removing
+        // the class avoids a last-frame jump.
+        statsEl.classList.remove('is-fullbleed');
 
         var desktopCta = document.getElementById('hero-cta');
         if (desktopCta) {
