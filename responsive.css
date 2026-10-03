@@ -990,6 +990,10 @@ h3 {
     flex-direction: column;
   }
 
+  .project-nda-body .nda-badge {
+    align-self: flex-start;
+  }
+
   .project-nda-body .project-stats {
     margin-top: auto;
   }
