@@ -1499,3 +1499,13 @@ h3 {
     justify-self: stretch;
   }
 }
+
+
+/* 390px competencies: use identical inner horizontal padding for all cards. */
+@media (max-width: 390px) {
+  .competency-card:nth-child(2),
+  .competency-card:nth-child(4) {
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+  }
+}
