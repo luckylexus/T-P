@@ -473,23 +473,52 @@
   </script>
 
   <script>
-    // Stats section: reveal to full-bleed once it's meaningfully scrolled
-    // into view. Scrolling back up past it (toward the hero) collapses it
-    // back to the start state; scrolling on past it (toward founders)
-    // leaves it expanded rather than collapsing.
+    // Stats section: stable desktop reveal with hysteresis.
+    // Do not derive the state from intersection ratio because toggling
+    // .is-fullbleed changes this section's own size/margins and can make
+    // IntersectionObserver bounce around its threshold while scrolling.
     (function () {
       var statsEl = document.querySelector('.stats');
-      if (!statsEl || !('IntersectionObserver' in window)) return;
-      var observer = new IntersectionObserver(function (entries) {
-        entries.forEach(function (entry) {
-          if (entry.isIntersecting) {
-            statsEl.classList.add('is-fullbleed');
-          } else if (entry.boundingClientRect.top > 0) {
-            statsEl.classList.remove('is-fullbleed');
-          }
-        });
-      }, { threshold: 0.3 });
-      observer.observe(statsEl);
+      if (!statsEl) return;
+
+      var ticking = false;
+      var isExpanded = statsEl.classList.contains('is-fullbleed');
+
+      function updateStatsReveal() {
+        ticking = false;
+
+        // Keep the existing mobile behaviour independent from the desktop
+        // full-bleed transition.
+        if (window.matchMedia('(max-width: 768px)').matches) {
+          var mobileRect = statsEl.getBoundingClientRect();
+          var mobileVisible = mobileRect.top < window.innerHeight * 0.72;
+          statsEl.classList.toggle('is-fullbleed', mobileVisible);
+          isExpanded = mobileVisible;
+          return;
+        }
+
+        var rect = statsEl.getBoundingClientRect();
+
+        // Separate enter/exit thresholds create a dead zone, so the layout
+        // transition itself cannot immediately reverse the state.
+        if (!isExpanded && rect.top <= window.innerHeight * 0.72) {
+          isExpanded = true;
+          statsEl.classList.add('is-fullbleed');
+        } else if (isExpanded && rect.top >= window.innerHeight * 0.94) {
+          isExpanded = false;
+          statsEl.classList.remove('is-fullbleed');
+        }
+      }
+
+      function requestUpdate() {
+        if (ticking) return;
+        ticking = true;
+        requestAnimationFrame(updateStatsReveal);
+      }
+
+      window.addEventListener('scroll', requestUpdate, { passive: true });
+      window.addEventListener('resize', requestUpdate);
+      updateStatsReveal();
     })();
   </script>
 
