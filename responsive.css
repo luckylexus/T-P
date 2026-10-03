@@ -1334,3 +1334,13 @@ h3 {
     justify-self: end;
   }
 }
+
+
+/* Mobile contact-card tap mirrors the desktop hover animation. */
+@media (hover: none), (pointer: coarse) {
+  .contact-card:active {
+    border-color: var(--color-accent-primary);
+    background: var(--color-accent-green-tint);
+    transform: translateY(-2px);
+  }
+}
