@@ -1166,3 +1166,26 @@ h3 {
   opacity: 1;
   transform: translateY(0);
 }
+
+
+/* Restore partnership format card reveal animation after responsive overrides. */
+.format-card {
+  opacity: 0;
+  transform: translateY(32px);
+  transition:
+    opacity 0.9s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.format-card.is-revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .format-card {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
