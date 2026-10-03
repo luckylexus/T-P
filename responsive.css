@@ -1360,18 +1360,6 @@ h3 {
 }
 
 
-/* Small-screen roadmap: maximize the long sixth title while keeping it on one line. */
-@media (max-width: 390px) {
-  .roadmap-item:nth-of-type(7) .roadmap-content h3 {
-    font-size: clamp(29px, 8.45vw, 33px);
-    line-height: 1.05;
-    white-space: nowrap;
-    overflow-wrap: normal;
-    word-break: normal;
-  }
-}
-
-
 /* Dedicated 1024px layout fix. Keep established mobile and desktop layouts untouched. */
 @media (min-width: 980px) and (max-width: 1048px) {
   .projects,
@@ -1474,18 +1462,11 @@ h3 {
 
 
 
-/* 1024px roadmap: align right-side titles to the Launch MVP title baseline. */
+/* 1024px roadmap: align Hypothesis to the Launch MVP title baseline. */
 @media (min-width: 980px) and (max-width: 1048px) {
-  /* Step 2: Гипотеза — slightly left to match the visual start of Запуск MVP. */
   .roadmap-item:nth-of-type(3) .roadmap-content h3 {
     position: relative;
     left: -28px;
-  }
-
-  /* Step 6: Масштабирование — slightly right to match the same line. */
-  .roadmap-item:nth-of-type(7) .roadmap-content h3 {
-    position: relative;
-    left: 56px;
   }
 }
 
