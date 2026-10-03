@@ -971,3 +971,26 @@ h3 {
     transform: translateX(-50%) translateY(-1px) scale(0.97) !important;
   }
 }
+
+
+/* Keep NDA case cards equal-height on desktop. */
+@media (min-width: 769px) {
+  .project-nda-grid {
+    align-items: stretch;
+  }
+
+  .project-nda-card {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .project-nda-body {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .project-nda-body .project-stats {
+    margin-top: auto;
+  }
+}
