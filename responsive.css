@@ -1444,3 +1444,17 @@ h3 {
     min-width: 0;
   }
 }
+
+
+/* 1024px stats: pull all four metrics closer to the center. */
+@media (min-width: 980px) and (max-width: 1048px) {
+  .stat.corner-tl,
+  .stat.corner-bl {
+    left: calc(50% - 360px);
+  }
+
+  .stat.corner-tr,
+  .stat.corner-br {
+    left: calc(50% + 160px);
+  }
+}
