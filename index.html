@@ -473,41 +473,52 @@
   </script>
 
   <script>
-    // Stats section: stable desktop reveal with hysteresis.
-    // Do not derive the state from intersection ratio because toggling
-    // .is-fullbleed changes this section's own size/margins and can make
-    // IntersectionObserver bounce around its threshold while scrolling.
+    // Stats section: scroll-driven desktop expansion.
+    // Progress is derived only from scroll position, not from the element's
+    // changing intersection ratio, so the section can stretch smoothly
+    // without flickering while its own geometry changes.
     (function () {
       var statsEl = document.querySelector('.stats');
       if (!statsEl) return;
 
       var ticking = false;
-      var isExpanded = statsEl.classList.contains('is-fullbleed');
+
+      function clamp(value, min, max) {
+        return Math.min(max, Math.max(min, value));
+      }
 
       function updateStatsReveal() {
         ticking = false;
 
-        // Keep the existing mobile behaviour independent from the desktop
-        // full-bleed transition.
         if (window.matchMedia('(max-width: 768px)').matches) {
-          var mobileRect = statsEl.getBoundingClientRect();
-          var mobileVisible = mobileRect.top < window.innerHeight * 0.72;
-          statsEl.classList.toggle('is-fullbleed', mobileVisible);
-          isExpanded = mobileVisible;
+          statsEl.style.removeProperty('--stats-progress');
+          statsEl.style.removeProperty('--stats-side-inset');
+          statsEl.classList.toggle(
+            'is-fullbleed',
+            statsEl.getBoundingClientRect().top < window.innerHeight * 0.72
+          );
           return;
         }
 
+        // Use the section's document position before applying the current
+        // frame's visual interpolation. This keeps progress stable.
         var rect = statsEl.getBoundingClientRect();
+        var docTop = rect.top + window.scrollY;
+        var startScroll = docTop - window.innerHeight * 0.86;
+        var endScroll = docTop - window.innerHeight * 0.34;
+        var progress = clamp(
+          (window.scrollY - startScroll) / Math.max(1, endScroll - startScroll),
+          0,
+          1
+        );
 
-        // Separate enter/exit thresholds create a dead zone, so the layout
-        // transition itself cannot immediately reverse the state.
-        if (!isExpanded && rect.top <= window.innerHeight * 0.72) {
-          isExpanded = true;
-          statsEl.classList.add('is-fullbleed');
-        } else if (isExpanded && rect.top >= window.innerHeight * 0.94) {
-          isExpanded = false;
-          statsEl.classList.remove('is-fullbleed');
-        }
+        var startInset = Math.max(0, (window.innerWidth - 1280) / 2);
+        var endInset = Math.max(0, (window.innerWidth - 1920) / 2);
+        var sideInset = startInset + (endInset - startInset) * progress;
+
+        statsEl.style.setProperty('--stats-progress', progress.toFixed(4));
+        statsEl.style.setProperty('--stats-side-inset', sideInset.toFixed(2) + 'px');
+        statsEl.classList.toggle('is-fullbleed', progress >= 0.999);
       }
 
       function requestUpdate() {
