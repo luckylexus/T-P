@@ -801,6 +801,74 @@ h3 {
   }
 }
 
+
+/* Restore the original mobile founder composition. */
+@media (max-width: 560px) {
+  .founders {
+    gap: 160px;
+  }
+
+  .founders-left {
+    display: contents;
+  }
+
+  .founders .section-heading {
+    order: 1;
+  }
+
+  .founder-photos {
+    order: 2;
+    display: flex !important;
+    flex-direction: column !important;
+    grid-template-columns: none !important;
+    gap: 140px !important;
+    width: 100%;
+    margin-top: -128px;
+  }
+
+  .founder-details {
+    order: 3;
+  }
+
+  .founder-photo {
+    position: relative;
+    width: 100%;
+    max-width: none;
+  }
+
+  .founder-photo img {
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+  }
+
+  .founder-name-badge {
+    position: absolute;
+    width: 250px;
+    height: 100px;
+    max-width: calc(100% - 20px);
+    white-space: nowrap;
+  }
+
+  .founder-photo--1 .founder-name-badge {
+    left: 0;
+    right: auto;
+    top: auto;
+    bottom: 0;
+    transform: translateY(50%);
+  }
+
+  .founder-photo--2 .founder-name-badge {
+    left: auto;
+    right: 0;
+    top: 0;
+    bottom: auto;
+    transform: translateY(-50%);
+  }
+}
+
 @media (max-width: 390px) {
   .hero h1,
   .hero-inner h1 {
