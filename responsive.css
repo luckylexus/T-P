@@ -283,7 +283,9 @@ h3 {
   }
 
   .hero {
+    min-height: 100vh;
     min-height: 100svh;
+    min-height: 100dvh;
   }
 
   .hero-inner {
@@ -1070,6 +1072,8 @@ h3 {
 @media (min-width: 769px) {
   .hero {
     min-height: 100vh;
+    min-height: 100svh;
+    min-height: 100dvh;
     width: 100%;
   }
 
