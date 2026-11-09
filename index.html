@@ -644,10 +644,6 @@
         // so there is no discrete state change at the fully-open point.
         statsEl.classList.remove('is-fullbleed');
 
-        var desktopCta = document.getElementById('hero-cta');
-        if (desktopCta) {
-          desktopCta.classList.toggle('is-desktop-visible', progress > 0.08);
-        }
       }
 
       function requestUpdate() {
@@ -768,8 +764,7 @@
   </button>
 
   <script>
-    // CTA stays off the hero. Desktop visibility is tied to the stats
-    // expansion; mobile visibility is handled by the mobile CTA script.
+    // CTA stays off the hero and scrolls to the contact section on click.
     (function () {
       var btn = document.getElementById('hero-cta');
       var contact = document.getElementById('contact');
@@ -828,27 +823,24 @@
 
 
   <script>
-    // Mobile CTA: hidden on the hero, shown once the user reaches the next section.
+    // Global CTA: hidden only while the hero is visible. Once the user
+    // scrolls past the hero, it stays visible throughout the rest of the page.
     (function () {
       var btn = document.getElementById('hero-cta');
       var hero = document.querySelector('.hero');
       if (!btn || !hero) return;
 
-      function updateMobileCta() {
+      function updateCtaVisibility() {
         var isMobile = window.matchMedia('(max-width: 768px)').matches;
+        var isPastHero = hero.getBoundingClientRect().bottom <= 0;
 
-        if (!isMobile) {
-          btn.classList.remove('is-mobile-visible');
-          return;
-        }
-
-        var heroBottom = hero.getBoundingClientRect().bottom;
-        btn.classList.toggle('is-mobile-visible', heroBottom <= 0);
+        btn.classList.toggle('is-mobile-visible', isMobile && isPastHero);
+        btn.classList.toggle('is-desktop-visible', !isMobile && isPastHero);
       }
 
-      window.addEventListener('scroll', updateMobileCta, { passive: true });
-      window.addEventListener('resize', updateMobileCta);
-      updateMobileCta();
+      window.addEventListener('scroll', updateCtaVisibility, { passive: true });
+      window.addEventListener('resize', updateCtaVisibility);
+      updateCtaVisibility();
     })();
   </script>
 
